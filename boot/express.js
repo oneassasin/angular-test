@@ -1,12 +1,13 @@
-const config = require('nconf');
+const nconf = require('nconf');
 const expressValidator = require('express-validator');
 const debug = require('debug')('Express');
+const parseMW = require('../middleware/parseComMiddleware');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 module.exports = function index(app) {
-  app.set('port', config.get('app:port'));
+  app.set('port', nconf.get('app:port'));
 
   //if behind a reverse proxy such as Varnish or Nginx
   //app.enable('trust proxy');
@@ -17,6 +18,7 @@ module.exports = function index(app) {
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json({}));
   app.use(expressValidator());
+  app.use(parseMW());
 
   debug('Configuration complete!');
 };
