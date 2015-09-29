@@ -1,5 +1,5 @@
 const async = require('async');
-const Q = require('q');
+const Promise = require('bluebird');
 
 module.exports.escape = function escape(str) {
   if (str === null || str === undefined || str === '')
@@ -18,7 +18,7 @@ function _escapeSymbols(str) {
 }
 
 module.exports.sanitize = function(object) {
-  return Q.Promise(function(resolve, reject, notify) {
+  return new Promise(function(resolve, reject) {
     const results = {};
     async.forEachOf(object,
       function(value, key, callback) {

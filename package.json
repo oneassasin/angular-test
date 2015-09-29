@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "async": "^1.4.2",
+    "bluebird": "^2.10.1",
     "body-parser": "^1.14.1",
     "cookie-parser": "^1.4.0",
     "debug": "^2.2.0",
@@ -16,6 +17,6 @@
     "morgan": "^1.6.1",
     "nconf": "^0.8.0",
     "node-parse-api": "^0.3.8",
-    "bluebird": "^2.10.1"
+    "sha1": "^1.1.1"
   }
 }

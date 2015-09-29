@@ -7,5 +7,12 @@
   "parse": {
     "master_key": "akicF0iAktaNk6zI7fZRohhuw7bxqiW6ktQxVMu6",
     "app_key": "yffd31qepABfO37pKM00C06cIaj5xlWCpfYL8AMc"
+  },
+  "cookie": {
+    "name": "TSID",
+    "params": {
+      "maxAge": 3600000,
+      "httpOnly": true
+    }
   }
 }
